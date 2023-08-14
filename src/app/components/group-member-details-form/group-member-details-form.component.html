@@ -1,0 +1,36 @@
+<div class="row g-2">
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="fname" class="form-label">Name</label>
+        <input type="text" id="fname" class="form-control" required placeholder="Your full name" name="name{{groupMemberId}}">
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="jobTitle" class="form-label">Job Title</label>
+        <input type="text" id="jobTitle" class="form-control" required placeholder="Eg: ICT Officer II" name="job{{groupMemberId}}">
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="officeMail" class="form-label">E-mail</label>
+        <input type="mail" id="officeMail" class="form-control" required placeholder="eg: your.email@tra.go.tz" name="email{{groupMemberId}}">
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="pno" class="form-label">Cellphone number</label>
+        <input type="number" class="form-control" required placeholder="Eg: 0752xxxxxx" name="pno{{groupMemberId}}">
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="tregion" class="form-label">Tax Region</label>
+        <select  name="taxRegion{{groupMemberId}}" id="tregion" class="form-select">
+            <option value="">Choose Tax Region</option>
+        </select>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="tregion" class="form-label">Department</label>
+        <select  name="department{{groupMemberId}}" id="tregion" class="form-select">
+            <option value="">Choose your department</option>
+        </select>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="tregion" class="form-label">Section</label>
+        <select  name="section{{groupMemberId}}" id="tregion" class="form-select">
+            <option value="">Choose Section</option>
+        </select>
+    </div>
+</div>

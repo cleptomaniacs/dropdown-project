@@ -1,1 +1,97 @@
-<p>group-innovation-form works!</p>
+<form class="row g-2 mt-2">
+    <div class="col-md-12">
+        <h5 class="fs-5">Group leader details</h5>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="fname" class="form-label">Name</label>
+        <input type="text" id="fname" class="form-control" required placeholder="Your full name">
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="jobTitle" class="form-label">Job Title</label>
+        <input type="text" id="jobTitle" class="form-control" required placeholder="Eg: ICT Officer II">
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="officeMail" class="form-label">E-mail</label>
+        <input type="mail" id="officeMail" class="form-control" required placeholder="eg: your.email@tra.go.tz">
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="pno" class="form-label">Cellphone number</label>
+        <input type="number" class="form-control" required placeholder="Eg: 0752xxxxxx">
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="tregion" class="form-label">Tax Region</label>
+        <select name="taxRegion" id="tregion" class="form-select">
+            <option value="">Choose Tax Region</option>
+        </select>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="tregion" class="form-label">Department</label>
+        <select name="taxRegion" id="tregion" class="form-select">
+            <option value="">Choose your department</option>
+        </select>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="tregion" class="form-label">Section</label>
+        <select name="taxRegion" id="tregion" class="form-select">
+            <option value="">Choose Section</option>
+        </select>
+    </div>
+    <div class="col-md-12">
+        <h5 class="fs-5 my-3">Group member details</h5>
+        <app-group-member-details-form [groupMemberId]="0"></app-group-member-details-form>
+        <button type="button" class="btn btn-sm btn-outline-secondary mt-3">Add Member</button>
+    </div>
+    
+    <div class="col-md-6 col-lg-6 col-sm-12">
+        <label for="tregion" class="form-label">Title of the idea</label>
+        <input type="text" class="form-control" required placeholder="eg: Improvement of data management within the authority">
+    </div>
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <label for="tregion" class="form-label">Type of innovation idea</label>
+        <select name="taxRegion" id="tregion" class="form-select" (change)="onChange($event)">
+            <option value="new">New idea</option>
+            <option value="derived">Derived from existing processes, systems or procedures within the authority</option>
+        </select>
+    </div>
+    <div class="col-md-12" *ngIf="newOrDerived">
+        <label for="problemExplanation" class="form-label">Explain the new idea</label>
+        <textarea name="" id="problemExplanation" class="form-control" rows="5" placeholder="Briefly explain .your new idea"  [required]="newOrDerived"></textarea>
+    </div>
+    <div class="col-md-12" *ngIf="!newOrDerived">
+        <label for="problemExplanation" class="form-label">Describe the current practice and areas your idea intends to improve </label>
+        <textarea name="" id="problemExplanation" class="form-control" rows="5" placeholder="briefly describe the current practice and areas your idea intends to improve " [required]="!newOrDerived"></textarea>
+    </div>
+    <div class="col-md-12">
+        <label for="problemExplanation" class="form-label">Describe the impact your idea may bring to the Authority</label>
+        <textarea name="" id="problemExplanation" class="form-control" rows="5" placeholder="e.g. increase revenue, reduce cost- Administrative/Compliance, improve system/process or improve employee performance" required></textarea>
+    </div>
+    <div class="col-md-12">
+        <div class="row justify-content-space-between">
+            <div class="col-md-9">
+                <p class="text-break">
+                    How long do you think your idea can be implemented if accepted! Indicate the number of months 
+                </p>
+            </div>
+            <div class="col-md-3">
+                <input type="number" class="form-control" placeholder="No of month (Optional)">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <label for="problemExplanation" class="form-label">State risks involved during the implementation of your Idea</label>
+        <textarea name="" id="problemExplanation" class="form-control" rows="5" placeholder="State risks involved during the implementation of your Idea (Optional)" required></textarea>
+    </div>
+    <div class="col-md-12">
+        <label for="problemExplanation" class="form-label">Please explain the mitigation measure of risk mentioned above</label>
+        <textarea name="" id="problemExplanation" class="form-control" rows="5" placeholder="Please explain the mitigation measure of risk mentioned above" required></textarea>
+    </div>
+    <div class="col-md-12">
+        <label for="problemExplanation" class="form-label">What are the resources required during the implementation process, if your idea is accepted </label>
+        <textarea name="" id="problemExplanation" class="form-control" rows="5" placeholder="Eg: Technological, Financial, Human resources" required></textarea>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-primary px-5 py-2">Submit</button>
+    </div>
+</form>
+
+

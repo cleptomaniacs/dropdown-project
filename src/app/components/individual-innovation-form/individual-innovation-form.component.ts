@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./individual-innovation-form.component.css']
 })
 export class IndividualInnovationFormComponent {
+  newOrDerived: boolean = true;
+
+  onChange(event:any):void{
+    let idea=event.target.value;
+    if(idea=="new"){
+      this.newOrDerived=true;
+    }else{
+      this.newOrDerived=false;
+    }
+  }
 
 }

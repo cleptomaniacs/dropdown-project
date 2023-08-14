@@ -12,20 +12,6 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li> -->
       </ul>
     </div>
   </div>
@@ -42,23 +28,28 @@
         You are requested to fill out the form below providing detailed information concerning your idea for effective evaluation. 
       </p>
       <div class="mt-3 p-4 rounded shadow-sm border">
+        <h3 class="fs-3 mb-4">Problem / Innovation idea form</h3>
         <form class="row g-2">
           <div class="col-md-6">
             <label for="state" class="form-label">State if it is an innovation idea or problem</label>
-            <select name="state" id="state" class="form-select">
+            <select name="state" id="state" class="form-select" (change)="onChangeInnovationOrProblem($event)">
+              <option value="one">Choose one</option>
               <option value="innovation">Innovation</option>
               <option value="problem">Problem</option>
             </select>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" *ngIf="innovationOrProblem">
             <label for="state" class="form-label">State if the innovation is individual or group</label>
-            <select name="state" id="state" class="form-select">
+            <select name="state" id="state" class="form-select" (change)="onChangeIndividualOrGroup($event)">
+              <option value="one">Choose one</option>
               <option value="individual">Individual</option>
-              <option value="problem">Group</option>
+              <option value="group">Group</option>
             </select>
           </div>
         </form>
         <app-problem-form *ngIf="displayProblemForm"></app-problem-form>
+        <app-individual-innovation-form *ngIf="displayIndividualInnovationForm"></app-individual-innovation-form>
+        <app-group-innovation-form *ngIf="displayGroupInnovationForm"></app-group-innovation-form>
       </div>
     </div>
   </div>
