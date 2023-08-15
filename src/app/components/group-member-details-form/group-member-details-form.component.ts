@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-group-member-details-form',
@@ -8,5 +8,13 @@ import { Component, Input } from '@angular/core';
 export class GroupMemberDetailsFormComponent {
 
   @Input() groupMemberId:number = 0;
+  @Output() memberID: EventEmitter<number>
+  constructor(){
+    this.memberID=new EventEmitter();
+  }
+
+  onClickRemove(id:number){
+    this.memberID.emit(id);
+  }
 
 }

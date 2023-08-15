@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GroupMemberDetailsFormComponent } from '../group-member-details-form/group-member-details-form.component';
 
 @Component({
   selector: 'app-group-innovation-form',
@@ -7,15 +8,14 @@ import { Component } from '@angular/core';
 })
 export class GroupInnovationFormComponent {
   newOrDerived: boolean = true;
-  totalMembers: number = 1;
-  //members: []=[]
+  members: GroupMemberDetailsFormComponent[]=[]
+
+  constructor(){
+    this.members.push(new GroupMemberDetailsFormComponent )
+  }
 
   onAddMember():void{
-    if (this.totalMembers<5) {
-      this.totalMembers++;
-    }else{
-      this.totalMembers = this.totalMembers
-    }
+      this.members.push(new GroupMemberDetailsFormComponent);
   }
 
   onChange(event:any):void{
@@ -24,6 +24,13 @@ export class GroupInnovationFormComponent {
       this.newOrDerived=true;
     }else{
       this.newOrDerived=false;
+    }
+  }
+
+  removeMember(event:number):void{
+    let index=event
+    if (this.members.length>1) {
+      this.members.splice(index,1)
     }
   }
 
